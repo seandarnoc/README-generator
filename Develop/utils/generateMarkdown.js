@@ -19,8 +19,17 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   
-  if (license) {
-    
+  if (license === 'Boost') {
+    return '[![license]](https://www.boost.org/LICENSE_1_0.txt)'
+  } else if (license === 'Eclipse') {
+    return '[![license]](https://opensource.org/licenses/EPL-1.0)'
+  } else if (license === 'MIT') {
+    return '[![license]](https://opensource.org/licenses/MIT)'
+  }else if (license === 'Apache') {
+    return '[![license]](https://opensource.org/licenses/Apache-2.0)'
+  } else {
+    return ""
+
   }
 }
  
@@ -35,9 +44,42 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-
+  return `
+  # ${data.project_title}
+  
+  ${renderLicenseBadge(data.license)}
+  ## Table-of-Contents
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  
+  ## [Description](#table-of-contents)
+  ${data.description_of_project}
+  
+  ## [Installation](#table-of-contents)
+  ${data.installation_instructions}
+  ## [Usage](#table-of-contents)
+  ${data.usage_information}
+  
+  For more information on how to add screenshots for examples, visit the following website:
+  
+  [Mark Down Tutorial](https://ghost.org/changelog/markdown/)
+  
+  ${renderLicenseSection(data.license)}
+  ## [Contributing](#table-of-contents)
+  ${data.contribution_guidelines}
+  ## [Tests](#table-of-contents)
+  ${data.test_instructions}
+  ## [Questions](#table-of-contents)
+  Please contact me using the following links:
+  [GitHub](https://github.com/${data.github_username})
+  [Email: ${data.email}](mailto:${data.email})
 `;
 }
+  
+
 
 module.exports = generateMarkdown;

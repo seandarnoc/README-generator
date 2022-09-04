@@ -43,13 +43,13 @@ const questions = [
 
     {
         type: 'input',
-        name: 'test.instructions',
+        name: 'test_instructions',
         message: "provide code examples to help another contributor:"
     },
 
     {
         type: 'list',
-        name: 'project_license',
+        name: 'license',
         message: "Choose your license:",
         choices: ['Boost', 'Eclipse', 'MIT', 'Apache'],
         filter(val) {
@@ -59,7 +59,7 @@ const questions = [
 
     {
         type: 'input',
-        name: 'github username',
+        name: 'github_username',
         message: "What is your github username?"
     },
 
@@ -73,7 +73,9 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     let readme = generatMarkdown(data);
-    fs.appendFile(fileName, readme);
+    fs.appendFile(fileName, readme, (err) =>
+    err ? console.console.error(err) : console.log('Finished, please review your new readme.md file')
+    );    
 }
 
 // TODO: Create a function to initialize app
