@@ -1,5 +1,5 @@
 
-  # tt
+  # Seans README Generator
   
   [![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
   ## Table-of-Contents
@@ -12,12 +12,12 @@
   * [Questions](#questions)
   
   ## [Description](#table-of-contents)
-  tt
+  a project that allows you to generate a readme file faster, as the template is already built for you, in a professional way.
   
   ## [Installation](#table-of-contents)
-  tt
+  dependencies are inquirer and FS
   ## [Usage](#table-of-contents)
-  tt
+  use the project to create a professional README
   
   For more information on how to add screenshots or other enhancements to this README, visit the following website:
   
@@ -30,11 +30,11 @@
         
   [![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
   ## [Contributing](#table-of-contents)
-  tt
+  no requirements at this time
   ## [Tests](#table-of-contents)
-  tt 
+  put sample code here 
   
   ## [Questions](#table-of-contents)
   Please contact me using the following links:
-  [GitHub](https://github.com/tt)
-  [Email: tt](mailto:tt)
+  [GitHub](https://github.com/seandarnoc)
+  [Email: sean.w.conrad@gmail.com](mailto:sean.w.conrad@gmail.com)
