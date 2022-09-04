@@ -37,10 +37,17 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) { 
-  return `## License
-  This project is publised using ${license} license.
-  `;
-}
+      if (license!== 'no license') {
+        return `
+        ## [License](#table-of-contents)
+        This project is covered under this license:
+        ${renderLicenseLink(license)}
+        `;
+      } else {
+        return ' ';
+      }
+      }
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -54,6 +61,7 @@ function generateMarkdown(data) {
   * [Usage](#usage)
   * [Contributing](#contributing)
   * [Tests](#tests)
+  * [License](#license)
   * [Questions](#questions)
   
   ## [Description](#table-of-contents)
@@ -64,7 +72,7 @@ function generateMarkdown(data) {
   ## [Usage](#table-of-contents)
   ${data.usage_information}
   
-  For more information on how to add screenshots for examples, visit the following website:
+  For more information on how to add screenshots or other enhancements to this README, visit the following website:
   
   [Mark Down Tutorial](https://ghost.org/changelog/markdown/)
   
@@ -72,7 +80,8 @@ function generateMarkdown(data) {
   ## [Contributing](#table-of-contents)
   ${data.contribution_guidelines}
   ## [Tests](#table-of-contents)
-  ${data.test_instructions}
+  ${data.test_instructions} 
+  ${renderLicenseBadge(data.license)}
   ## [Questions](#table-of-contents)
   Please contact me using the following links:
   [GitHub](https://github.com/${data.github_username})
