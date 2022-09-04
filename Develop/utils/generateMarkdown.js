@@ -27,6 +27,8 @@ function renderLicenseLink(license) {
     return '[![license]](https://opensource.org/licenses/MIT)'
   }else if (license === 'Apache') {
     return '[![license]](https://opensource.org/licenses/Apache-2.0)'
+  } else if (license == 'No License') {
+    return '"This project does not require a license"';
   } else {
     return ""
 
@@ -37,7 +39,7 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) { 
-      if (license!== 'no license') {
+      if (license !== 'no license') {
         return `
         ## [License](#table-of-contents)
         This project is covered under this license:
@@ -48,7 +50,13 @@ function renderLicenseSection(license) {
       }
       }
 
-
+function renderLicenseInTableOfContents(license) {
+  if (license !== "no license") {
+    return `
+    * [License](#license)
+    `;
+  }
+}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
@@ -77,11 +85,12 @@ function generateMarkdown(data) {
   [Mark Down Tutorial](https://ghost.org/changelog/markdown/)
   
   ${renderLicenseSection(data.license)}
+  ${renderLicenseBadge(data.license)}
   ## [Contributing](#table-of-contents)
   ${data.contribution_guidelines}
   ## [Tests](#table-of-contents)
   ${data.test_instructions} 
-  ${renderLicenseBadge(data.license)}
+  
   ## [Questions](#table-of-contents)
   Please contact me using the following links:
   [GitHub](https://github.com/${data.github_username})

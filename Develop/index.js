@@ -51,7 +51,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: "Choose your license:",
-        choices: ['Boost', 'Eclipse', 'MIT', 'Apache'],
+        choices: ['Boost', 'Eclipse', 'MIT', 'Apache', 'No License'],
         filter(val) {
             return val;
         }
